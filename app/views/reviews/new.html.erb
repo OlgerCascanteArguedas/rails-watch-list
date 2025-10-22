@@ -1,0 +1,9 @@
+<h1>Leave a review for <%= @list.name %></h1>
+
+<%= simple_form_for [@list, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating, collection: 0..5, prompt: "Select a rating" %>
+  <%= f.submit "Add Review", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "Back to list", list_path(@list) %>

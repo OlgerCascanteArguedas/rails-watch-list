@@ -17,5 +17,21 @@
   <p>No movies yet!</p>
 <% end %>
 
+<h2>Reviews</h2>
+
+<% if @list.reviews.any? %>
+  <ul>
+    <% @list.reviews.each do |review| %>
+      <li>
+        <strong>Rating:</strong> <%= review.rating %> ⭐
+        <p><%= review.content %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews yet!</p>
+<% end %>
+
 <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-success" %>
 <%= link_to "Back to all lists", lists_path, class: "btn btn-secondary" %>
+<%= link_to "Add a review", new_list_review_path(@list), class: "btn btn-success" %>
