@@ -80,4 +80,4 @@ test:
 production:
   <<: *default
   database: rails_watch_list_production
-  url: ENV["DATABASE_URL"]
+  url: <%= ENV["DATABASE_URL"] %>
